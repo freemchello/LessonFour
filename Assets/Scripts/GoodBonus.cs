@@ -1,0 +1,20 @@
+using System;
+using UnityEngine;
+
+namespace Maze
+{
+    public class GoodBonus : MonoBehaviour
+    {
+        // Start is called before the first frame update
+        void Start()
+        {
+
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+
+        }
+    }
+}
