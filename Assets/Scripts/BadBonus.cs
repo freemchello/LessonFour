@@ -1,6 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
+using Random = UnityEngine.Random;
 
 namespace Maze
 {
@@ -9,10 +12,15 @@ namespace Maze
         private float heightFly;
         private float speedRotation;
 
-        private void Awake()
+        public event Action<string, Color> OnCaughtPlayer = delegate (string str, Color color) { };
+
+
+        public void Awake()
         {
-            heightFly = Random.Range(1f, 5f);
+            
+            heightFly = Random.Range(1f, 1.5f);
             speedRotation = Random.Range(13f, 40f);
+            _transform = GetComponent<Transform>();
         }
 
         public void Fly()
@@ -32,7 +40,7 @@ namespace Maze
         }
         protected override void Interaction()
         {
-            
+            OnCaughtPlayer.Invoke(gameObject.name, _color);
         }
     }
 }

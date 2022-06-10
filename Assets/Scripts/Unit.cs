@@ -8,7 +8,7 @@ namespace Maze
         [SerializeField] public Rigidbody _rb;
         public Transform _transform;
 
-        public static float Speed = 5f;
+        public static float Speed = 10f;
         public static int Health = 100;
         public static bool isDead;
 
