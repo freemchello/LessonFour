@@ -9,7 +9,7 @@ namespace Maze
         [SerializeField]private Material _material;
         public int Point = 1;
 
-        public event Action<int> AddPoints = delegate (int i){};
+        public event Action<int> AddPoints = delegate (int i){ };
 
         void Awake()
         {

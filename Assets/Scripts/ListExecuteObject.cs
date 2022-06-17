@@ -1,6 +1,7 @@
 using System.Collections;
 using System;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace Maze
 {
@@ -11,6 +12,18 @@ namespace Maze
 
         public object Current => _interectiveObject[_index];
         public int Lenght => _interectiveObject.Length;
+
+        public ListExecuteObject()
+        {
+            Bonus[] BonusObject = Object.FindObjectsOfType<Bonus>();
+            for(int i = 0; i < BonusObject.Length; i++)
+            {
+                if(BonusObject[i] is IExecute intObj)
+                {
+                    AddExecuteObject(intObj);
+                }
+            }
+        }
 
         public IExecute this[int curr]
         {
