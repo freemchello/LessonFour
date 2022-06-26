@@ -25,6 +25,7 @@ namespace Maze
 
         [SerializeField] private GameObject _player;
         [SerializeField] private Button _restartButton;
+        [SerializeField] private Button _pause;
         void Awake()
         {
             Time.timeScale = 1f;
@@ -35,11 +36,10 @@ namespace Maze
             _interactiveObject = new ListExecuteObject();
 
             _viewBonus = new ViewBonus(_reference.BonusLabel);
-            _viewEndGame = new ViewEndGame(_reference.EndGameLabel);
+            _viewEndGame = new ViewEndGame(_reference.EndGameLabel); 
 
 
             _restartButton.onClick.AddListener(RestartGame);
-
             _restartButton.gameObject.SetActive(false);
 
             _interactiveObject.AddExecuteObject(_inputController);
@@ -59,10 +59,13 @@ namespace Maze
             }
         }
 
-        private void CaughtPlayer(string value, Color args)
+        private void CaughtPlayer(string value, Color color)
         {
             _restartButton.gameObject.SetActive(true);
             Time.timeScale = 0f;
+            string str = name.ExtensionStr();
+            Debug.Log(str);
+            Debug.Log(name);
         }
 
         private void CaughtPlayerWin(int value)
@@ -75,7 +78,7 @@ namespace Maze
         {
             SceneManager.LoadScene(0);
         }
-        
+       
         private void AddBonus(int value)
         {
             _bonusCount += value;
@@ -88,11 +91,13 @@ namespace Maze
             {
                 if(_interactiveObject[i] == null)
                 {
-                    continue;
+                    continue; 
                 }
 
                 _interactiveObject[i].Update();
             }
+
+           
 
             if (_bonusCount >= 5)
             {

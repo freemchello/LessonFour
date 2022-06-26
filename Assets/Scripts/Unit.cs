@@ -13,5 +13,7 @@ namespace Maze
         public static bool isDead;
 
         public abstract void Move(float x, float y, float z);
+
+        public abstract void SavePlayer(); 
     }
 }

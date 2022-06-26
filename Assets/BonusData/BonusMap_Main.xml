@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<ArrayOfSVect3 xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SVect3>
+    <X>20.9399986</X>
+    <Y>0</Y>
+    <Z>6.15</Z>
+  </SVect3>
+  <SVect3>
+    <X>20.95</X>
+    <Y>0</Y>
+    <Z>12.18</Z>
+  </SVect3>
+  <SVect3>
+    <X>2.39999962</X>
+    <Y>0</Y>
+    <Z>20.21</Z>
+  </SVect3>
+</ArrayOfSVect3>
